@@ -1,0 +1,6 @@
+{
+  "view" : "all-albums",
+  "startkey": [],
+  "endkey": [],
+  "limit" : 50
+}

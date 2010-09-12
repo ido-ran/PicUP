@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PicUP</title>
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+  </head>
+  <body>
+    <div id="account"></div>
+
+    <h1>PicUP Picture Portal</h1>
+
+    <div id="profile"></div>
+    <div id="items"></div>
+
+    <div id="sidebar">
+      <p>Edit welcome message.</p>
+      <p>Ideas: You could easily turn this into a photo sharing app, or a grocery list, or a chat room.</p>
+    </div>
+  </body>
+  <script src="vendor/couchapp/loader.js"></script>
+  <script type="text/javascript" charset="utf-8">
+$.couch.app(function(app) {
+  $("#account").evently("account", app);
+  $("#profile").evently("profile", app);
+  $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
+
+  var albums = app.ddoc.evently.albums;
+  albums.hier = $.extend(true, {}, albums.all, albums.hier);
+  $("#items").evently(albums, app);
+
+  $.pathbinder.begin("/albums");
+});
+
+function insertAgenda(root) {
+ console.log(root);	
+}
+</script>
+
+</html>

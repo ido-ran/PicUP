@@ -1,0 +1,19 @@
+{{#albums}}
+<li>
+  <a href="#/albums/{{next_path}}">
+  <div class="avatar">
+    {{#gravatar_url}}<img src="{{gravatar_url}}" alt="{{name}}"/>{{/gravatar_url}}
+    <div class="name">
+      {{name}}
+    </div>
+  </div>
+  <p>{{name}}</p>
+  </a>
+  <div style="clear:left;"></div>
+
+<script type="text/javascript"
+ src="http://www.google.com/calendar/feeds/developer-calendar@google.com/public/full?alt=json-in-script&callback=insertAgenda&orderby=starttime&max-results=15&singleevents=true&sortorder=ascending&futureevents=true">
+</script> 
+
+</li>
+{{/albums}}
